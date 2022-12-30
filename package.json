@@ -1,0 +1,16 @@
+{
+  "name": "window-event-proxy",
+  "version": "1.0.0",
+  "description": "My browser game needs to add event listener to `window` object, and needs to monitor all listener key and value.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^3.9.0"
+  }
+}
