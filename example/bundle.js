@@ -4,6 +4,8 @@
     if (!window) throw Error('`window` is not defined. This module is for browser environment.')
 
     function WindowEventProxy() {
+        const namespace = 'WindowEventProxy';
+
         const eventListener = {};
 
         this.addEventListener = (eventKey, key, func) => {
@@ -26,12 +28,11 @@
         };
 
         this.debug = () => {
-            const id = 'WindowEventProxy';
-            let debugWindow = document.getElementById(id);
+            let debugWindow = document.getElementById(namespace);
             if (debugWindow) document.body.removeChild(debugWindow);
 
             debugWindow = document.createElement('div');
-            debugWindow.id = 'WindowEventProxy';
+            debugWindow.id = namespace;
             debugWindow.style.border = '1px solid';
             debugWindow.style.padding = '1rem';
 
