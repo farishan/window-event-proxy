@@ -6,9 +6,17 @@ This module is exactly for that requirements. Other usage is not encouraged.
 
 ---
 
-NPM Scripts:
+## Methods
+
+- `.addEventListener(eventKey, listenerKey, func)`
+- `.removeEventListener(eventKey, listenerKey)`
+- `.debug()`
+
+### NPM Scripts:
 - `npm run build` to make a distributable ESM module, check `/dist` folder after run this script.
 - `npm run build-example` to make an example bundle. Open `example/index.html` on your browser after run this script.
+
+---
 
 How to preview:
 Open `example/index.html` in browser

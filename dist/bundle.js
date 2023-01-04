@@ -1,18 +1,1 @@
-if (!window) throw Error('`window` is not defined. This module is for browser environment.')
-
-const windowEventProxy = {
-    eventListener: {
-        mousemove: {},
-        mouseup: {}
-    },
-    addEventListener: function (event, id, fn) {
-        this.eventListener[event][id] = fn;
-        window.addEventListener(event, fn);
-    },
-    removeEventListener: function (event, id) {
-        window.removeEventListener(event, this.eventListener[event][id]);
-        delete this.eventListener[event][id];
-    }
-};
-
-export { windowEventProxy as default };
+if(!window)throw Error("`window` is not defined. This module is for browser environment.");function WindowEventProxy(){const e={};return this.addEventListener=(n,o,t)=>{e[n]||(e[n]={}),e[n][o]=t,window.addEventListener(n,t);},this.removeEventListener=(n,o)=>{window.removeEventListener(n,e[n][o]),delete e[n][o];},this.debug=()=>{let n=document.getElementById("WindowEventProxy");n&&document.body.removeChild(n),n=document.createElement("div"),n.id="WindowEventProxy",n.style.border="1px solid",n.style.padding="1rem";const o=[];Object.keys(e).forEach((n=>{Object.keys(e[n]).forEach((e=>{o.push(n+"/"+e);}));})),n.innerHTML=`<pre><code>${JSON.stringify(o," ",2)}</code></pre>`,document.body.appendChild(n),console.log(this);},this}const windowEventProxy=new WindowEventProxy;export{windowEventProxy as default};
