@@ -5,7 +5,7 @@ windowEventProxy.addEventListener('mousemove', 'testId', () => {
     console.log('mousemoving...')
 })
 
-windowEventProxy.visualize()
+windowEventProxy.debug()
 
 setTimeout(() => {
     windowEventProxy.removeEventListener('mousemove', 'testId')
@@ -16,7 +16,7 @@ setTimeout(() => {
 const addClickEventButton = document.createElement('button')
 addClickEventButton.innerHTML = 'Add click event'
 addClickEventButton.onclick = function() {
-    windowEventProxy.addEventListener('click', Math.random().toString(), () => {})
-    windowEventProxy.visualize()
+    windowEventProxy.addEventListener('click', Math.random().toString(), () => {console.log('clicked')})
+    windowEventProxy.debug()
 }
 document.body.appendChild(addClickEventButton)
